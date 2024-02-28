@@ -1,18 +1,18 @@
-import { BrowserRouter as Link } from "react-router-dom";
-import { users, posts } from "./home";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const UserDetails = () => (
+
+const UserDetails = (props) => (
   <div>
     <h2>List of users</h2>
     <ul>
-      {users.map((user) => (
+      {props.users.map((user) => (
         <li key={user.id}>
-          <Link to={`/user/${user.id}`}>{user.name}</Link>
+          <Link to={`/users/${user.id}`}>{user.name}</Link>
         </li>
       ))}
     </ul>
   </div>
 );
-
 
 export default UserDetails;
